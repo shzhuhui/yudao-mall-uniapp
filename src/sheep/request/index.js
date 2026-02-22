@@ -4,12 +4,13 @@
  */
 
 import Request from 'luch-request';
-import { apiPath, baseUrl, tenantId } from '@/sheep/config';
+import { apiPath, baseUrl } from '@/sheep/config';
 import $store from '@/sheep/store';
 import $platform from '@/sheep/platform';
 import { showAuthModal } from '@/sheep/hooks/useModal';
 import AuthUtil from '@/sheep/api/member/auth';
 import { getTerminal } from '@/sheep/helper/const';
+import { getAccessToken, getRefreshToken, getTenantId } from '@/sheep/helper/storage';
 
 const options = {
   // 显示操作成功消息 默认不显示
@@ -286,21 +287,6 @@ const handleAuthorized = () => {
     code: 401,
     msg: userStore.isLogin ? '您的登陆已过期' : '请先登录',
   });
-};
-
-/** 获得访问令牌 */
-export const getAccessToken = () => {
-  return uni.getStorageSync('token');
-};
-
-/** 获得刷新令牌 */
-export const getRefreshToken = () => {
-  return uni.getStorageSync('refresh-token');
-};
-
-/** 获得租户编号 */
-export const getTenantId = () => {
-  return uni.getStorageSync('tenant-id') || tenantId;
 };
 
 const request = (config) => {

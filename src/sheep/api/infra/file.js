@@ -1,5 +1,6 @@
 import { baseUrl, apiPath, tenantId } from '@/sheep/config';
-import request, { getAccessToken } from '@/sheep/request';
+import request from '@/sheep/request';
+import { getAccessToken } from '@/sheep/helper/storage';
 
 const FileApi = {
   // 上传文件

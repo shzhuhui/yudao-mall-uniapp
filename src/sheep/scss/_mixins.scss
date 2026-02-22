@@ -16,7 +16,9 @@
 }
 @mixin flex-bar {
   position: relative;
+  /* #ifndef APP-NVUE */
   display: flex;
+  /* #endif */
   align-items: center;
   justify-content: space-between;
 }

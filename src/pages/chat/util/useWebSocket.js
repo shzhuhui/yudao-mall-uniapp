@@ -1,7 +1,7 @@
 import { onBeforeUnmount, reactive, ref } from 'vue';
 import { baseUrl, websocketPath } from '@/sheep/config';
 import { copyValueToTarget } from '@/sheep/helper/utils';
-import { getRefreshToken } from '@/sheep/request';
+import { getRefreshToken } from '@/sheep/helper/storage';
 
 /**
  * WebSocket 创建 hook

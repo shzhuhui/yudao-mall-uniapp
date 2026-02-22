@@ -1,6 +1,6 @@
 import DiyApi from '@/sheep/api/promotion/diy';
 import { getTenantByWebsite } from '@/sheep/api/infra/tenant';
-import { getTenantId } from '@/sheep/request';
+import { getTenantId } from '@/sheep/helper/storage';
 import { defineStore } from 'pinia';
 import $platform from '@/sheep/platform';
 import $router from '@/sheep/router';
